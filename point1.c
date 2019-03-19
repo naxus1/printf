@@ -1,11 +1,11 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- *_printf - produces output according to a format
+ * _printf - produces output according to a format
 * @format: is a character string
 * Return: number of letter found
 */
-int _pritf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	int it_for, it_str, cont;
 	va_list list;
