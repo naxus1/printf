@@ -1,8 +1,9 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- *_printf - produces output according to a format                                        * @format: is a character string                                                      
- * Return: number of letter found
+ *_printf - produces output according to a format
+* @format: is a character string
+* Return: number of letter found
 */
 int _printf(const char *format, ...)
 	       {
@@ -18,12 +19,17 @@ int _printf(const char *format, ...)
                 {'\0', NULL}
  };
 	va_start(list, format);
-
-	 for (it_for = 0; format[it_for] != '\0'; it_for++)
-		 {
-			 if (format[it_for] == '%' && format[it_for + 1] == '%')
-				 {
-					 putchar('%');
-					 it_for++;
-					 cont++;
-				 }
+	for (it_for = 0; format[it_for] != '\0'; it_for++)
+		{
+			if (format[it_for] == '%' && format[it_for + 1] == '%')
+				{
+					putchar('%');
+					it_for++;
+					cont++;
+				}
+			else if (format[it_for] == '%')
+				{
+					it_for++;
+					for (it_str = 0; it_str < 4; it_str++)
+						{
+							if (format[it_for] == funct[it_str].flag)
