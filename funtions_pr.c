@@ -34,7 +34,8 @@ int print_int(va_list list)
 
 	while(p > 0)
 	{
-		
+		rev_num = rev_num * 10 + p % 10;
+		p = p / 10;
 	}
 
 
