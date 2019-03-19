@@ -26,3 +26,16 @@ int print_string(va_list list)
 	return(i_st);
 
 }
+
+int print_int(va_list list)
+{
+	int p = va_arg(list, int), rev_num = 0;
+	int crash = 0, result = 0;
+
+	while(p > 0)
+	{
+		
+	}
+
+
+}
