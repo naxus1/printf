@@ -19,6 +19,7 @@ int _printf(const char *format, ...)
                 {'\0', NULL}
  };
 	va_start(list, format);
+
 	for (it_for = 0; format[it_for] != '\0'; it_for++)
 		{
 			if (format[it_for] == '%' && format[it_for + 1] == '%')
@@ -33,3 +34,17 @@ int _printf(const char *format, ...)
 					for (it_str = 0; it_str < 4; it_str++)
 						{
 							if (format[it_for] == funct[it_str].flag)
+								{
+									cont += funct[it_str].p(list);
+								}
+						}
+				}
+			else
+				{
+					putchar(format[it_for]);
+					cont++;
+				}
+		}
+	va_end(list);
+	return (cont);
+}
