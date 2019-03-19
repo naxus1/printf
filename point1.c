@@ -20,3 +20,10 @@ int _printf(const char *format, ...)
 	va_start(list, format);
 
 	 for (it_for = 0; format[it_for] != '\0'; it_for++)
+		 {
+			 if (format[it_for] == '%' && format[it_for + 1] == '%')
+				 {
+					 putchar('%');
+					 it_for++;
+					 cont++;
+				 }
