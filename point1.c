@@ -17,3 +17,6 @@ int _printf(const char *format, ...)
                 {'d', print_int},
                 {'\0', NULL}
  };
+	va_start(list, format);
+
+	 for (it_for = 0; format[it_for] != '\0'; it_for++)
