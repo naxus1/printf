@@ -3,6 +3,11 @@
 
 #include <stdarg.h>
 
+int print_int(va_list list);
+int print_string(va_list list);
+int print_char(va_list list);
+int _printf(const char *format, ...);
+
 typedef struct str_print
 {
 	char flag;

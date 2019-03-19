@@ -27,6 +27,10 @@ int print_string(va_list list)
 
 }
 
+/**
+ * print_int - Print integer
+ * @list:argument to print
+ */
 int print_int(va_list list)
 {
 	int p = va_arg(list, int), rev_num = 0;
