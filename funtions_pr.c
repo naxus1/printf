@@ -38,5 +38,18 @@ int print_int(va_list list)
 		p = p / 10;
 	}
 
-
+	while (crash == 0)
+	{
+		if (rev_num / 10 != 0)
+		{
+			result = rev_num % 10;
+			printf("%d", result);
+			rev_num = rev_num / 10;
+		}
+		else
+		{
+			putchar(rev_num + '0');
+			crash = 1;
+		}
+	}
 }
