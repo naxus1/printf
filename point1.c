@@ -9,15 +9,14 @@ int _printf(const char *format, ...)
 {
 	int it_for, it_str, cont;
 	va_list list;
-	print_f funct[] = {
-	{"c", print_char},
-	{"s", print_string},
-	{"i", print_int},
-	{"d", print_int},
-	};
+	print_f funct[] = {{"c", print_char}, {"s", print_string},
+			   {"i", print_int}, {"d", print_int}};
 
 	va_start(list, format);
 	cont = 0;
+
+	if (format == NULL)
+		return (-1);
 
 	for (it_for = 0; format[it_for] != '\0' && format != NULL; it_for++)
 	{
