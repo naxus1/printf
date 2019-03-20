@@ -9,7 +9,7 @@ printf FORMAT [ARGUMENT]
 Produce output to standart output the format string is composed of zero or more
 directives: ordinary characters (not %), which are copied unchanged to the
 output stream; and conversion specifications, each of which results in fetching
- zero or more subsequent arguments.  Each conversion specification is introduced 
+zero or more subsequent arguments.  Each conversion specification is introduced
 by the character %, and ends with a conversion specifier diferent specifiers
 
 .SH FORMAT SPECIFIERS
