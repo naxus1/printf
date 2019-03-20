@@ -18,7 +18,7 @@ int _putchar(char c);
 
 typedef struct str_print
 {
-	char flag;
+	char *flag;
 	int (*p)(va_list list);
 } print_f;
 
