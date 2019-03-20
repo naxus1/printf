@@ -1,0 +1,33 @@
+.\" Manpage for Printf
+.\" Contact vivek@nixcraft.net.in to correct errors or typos.
+.TH printf "19 MAR 2019" "0.1" "Printf man page"
+.SH PRINTF
+printf \- print data
+.SH SYNOPSIS
+printf FORMAT [ARGUMENT]
+.SH DESCRIPTION
+Produce output to standart output the format string is composed of zero or more
+directives: ordinary characters (not %), which are copied unchanged to the
+output stream; and conversion specifications, each of which results in fetching
+zero or more subsequent arguments.  Each conversion specification is introduced
+by the character %, and ends with a conversion specifier diferent specifiers
+
+.SH FORMAT SPECIFIERS
+    %c - char
+    %s - string
+    %d - digit
+    %i - integer
+.SH CONVERSION SPECIFIERS
+
+c      If no l modifier is present, the int argument is converted to
+       an unsigned char, and the resulting character is written.
+
+s      If no l modifier is present: the const char * argument is
+       expected to be a pointer to an array of character type
+       (pointer to a string).  Characters from the array are written
+       up to (but not including) a terminating null byte ('\0')
+
+d, i   The int argument is converted to signed decimal notation.
+
+.SH AUTHOR
+Written by Juan Diego Valencia and Oscar Vargas
