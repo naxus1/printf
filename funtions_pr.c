@@ -2,6 +2,8 @@
 /**
  * print_char - Print a char
  * @list: argument to print
+ *
+ * Return: 0 if false, something else otherwise.
  */
 int print_char(va_list list)
 {
@@ -12,7 +14,8 @@ int print_char(va_list list)
 /**
  * print_string - Pring to string
  * @list: argument to print
- */
+ * Return: 0 if false, something else otherwise.
+*/
 int print_string(va_list list)
 {
 	char *p = va_arg(list, char *);
@@ -22,25 +25,26 @@ int print_string(va_list list)
 	{
 		_putchar(p[i_st]);
 	}
-	return(i_st);
+	return (i_st);
 
 }
 
 /**
  * print_int - Print integer
  * @list:argument to print
+ * Return: 0 if false, something else otherwise.
  */
 int print_int(va_list list)
 {
 	int p = va_arg(list, int), rev_num = 0;
 	int crash = 0, result = 0;
 
-	if(p < 0)
+	if (p < 0)
 	{
 		_putchar('-');
 		p *= -1;
 	}
-	while(p > 0)
+	while (p > 0)
 	{
 		rev_num = rev_num * 10 + p % 10;
 		p = p / 10;
