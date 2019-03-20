@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
  * _printf - produces output according to a format
 * @format: is a character string
@@ -9,9 +8,6 @@ int _printf(const char *format, ...)
 {
 	int it_for, it_str, cont;
 	va_list list;
-
-	cont = 0;
-
 	print_f funct[] = {
 	{'c', print_char},
 	{'s', print_string},
@@ -21,12 +17,13 @@ int _printf(const char *format, ...)
 	};
 
 	va_start(list, format);
+	cont = 0;
 
 	for (it_for = 0; format[it_for] != '\0'; it_for++)
 	{
 		if (format[it_for] == '%' && format[it_for + 1] == '%')
 		{
-			putchar('%');
+			_putchar('%');
 			it_for++;
 			cont++;
 		}
@@ -41,7 +38,7 @@ int _printf(const char *format, ...)
 		}
 		else
 			{
-				putchar(format[it_for]);
+				_putchar(format[it_for]);
 				cont++;
 			}
 	}
