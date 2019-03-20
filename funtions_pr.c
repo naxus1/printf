@@ -21,7 +21,7 @@ int print_string(va_list list)
 	char *p = va_arg(list, char *);
 	int i_st;
 
-	for (i_st = 0; p[i_st] != '\0', i_st++)
+	for (i_st = 0; p[i_st] != '\0'; i_st++)
 	{
 		_putchar(p[i_st]);
 	}
@@ -64,4 +64,6 @@ int print_int(va_list list)
 			crash = 1;
 		}
 	}
+
+	return (1);
 }
