@@ -5,7 +5,7 @@
  */
 int print_char(va_list list)
 {
-	putchar(va_arg(list, int));
+	_putchar(va_arg(list, int));
 	return (1);
 }
 
@@ -18,10 +18,9 @@ int print_string(va_list list)
 	char *p = va_arg(list, char *);
 	int i_st;
 
-	while (p[i_st])
+	for (i_st = 0; p[i_st] != '\0', i_st++)
 	{
-		putchar(p[i_st]);
-		i_st++;
+		_putchar(p[i_st]);
 	}
 	return(i_st);
 
@@ -36,6 +35,11 @@ int print_int(va_list list)
 	int p = va_arg(list, int), rev_num = 0;
 	int crash = 0, result = 0;
 
+	if(p < 0)
+	{
+		_putchar('-');
+		p *= -1;
+	}
 	while(p > 0)
 	{
 		rev_num = rev_num * 10 + p % 10;
@@ -47,12 +51,12 @@ int print_int(va_list list)
 		if (rev_num / 10 != 0)
 		{
 			result = rev_num % 10;
-			printf("%d", result);
+			_putchar(result + '0');
 			rev_num = rev_num / 10;
 		}
 		else
 		{
-			putchar(rev_num + '0');
+			_putchar(rev_num + '0');
 			crash = 1;
 		}
 	}
