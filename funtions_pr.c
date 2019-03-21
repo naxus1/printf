@@ -20,26 +20,13 @@ int print_char(va_list list)
 int print_string(va_list list)
 {
 	char *p = va_arg(list, char *);
-	char n[] = "(null)";
-	int i_st, i_pun = 0;
-
-	if (p == NULL)
-	{
-		while (n[i_pun])
-		{       _putchar(n[i_pun]);
-			i_pun++;
-		}
-		return (i_pun);
-	}
-	else
-	{
+	int i_st;
 
 		for (i_st = 0; p[i_st] != '\0'; i_st++)
 		{
 			_putchar(p[i_st]);
 		}
 		return (i_st);
-	}
 }
 
 /**
