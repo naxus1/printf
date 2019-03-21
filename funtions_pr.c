@@ -21,7 +21,7 @@ int print_string(va_list list)
 	char *p = va_arg(list, char *);
 	int i_st;
 
-	for (i_st = 0; p[i_st] != '\0', i_st++)
+	for (i_st = 0; p[i_st] != '\0'; i_st++)
 	{
 		_putchar(p[i_st]);
 	}
@@ -37,17 +37,13 @@ int print_string(va_list list)
 int print_int(va_list list)
 {
 	int p = va_arg(list, int), rev_num = 0;
-	int crash = 0, result = 0, cont = 0, last_digit = 0;
+	int crash = 0, result = 0, cont = 0;
 
 	if (p < 0)
 	{
 		_putchar('-');
 		p *= -1;
 	}
-
-	last_digit = p % 10;
-	p = p / 10;
-
 	while (p > 0)
 	{
 		rev_num = rev_num * 10 + p % 10;
@@ -70,7 +66,5 @@ int print_int(va_list list)
 			cont++;
 		}
 	}
-	_putchar(last_digit + '0');
-	cont++;
 	return (cont);
 }
