@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include "stdio.h"
 /**
  * print_char - Print a char
  * @list: argument to print
